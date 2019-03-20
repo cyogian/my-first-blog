@@ -1,0 +1,4 @@
+django[argon2]
+bcrypt
+pillow
+psycopg2-binary
