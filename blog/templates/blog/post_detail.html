@@ -3,8 +3,7 @@
                 <div class='post'>
                     <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>                  
                     <div class="edit date">
-                        <p>
-                            <B>Published On:</B> 
+                        <p>                            
                             {% if post.published_date %}
                             {{ post.published_date }}
                             {% else %}
