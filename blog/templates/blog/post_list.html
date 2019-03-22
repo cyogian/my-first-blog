@@ -6,7 +6,10 @@
                   <div class="date">
                     <p><B>Published On:</B> {{ post.published_date }}</p>
                   </div>
-                    <p>{{ post.text|safe|linebreaksbr|truncatewords:30}}...</p>
+                  <p>{{ post.text|safe|linebreaksbr|truncatewords:30}}...</p>
+                  <h6 class="comcount">
+                    <a href="{% url 'blog:post_detail' pk=post.pk %}#comment_section">Comments: {{ post.approved_comments.count }}</a>
+                  </h6>
                 </div>
                 {% endfor %}
 {% endblock %}
