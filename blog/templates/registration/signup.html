@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block signup %}
+    {% if user.is_authenticated %}
+    <h5>Looks like an user is already logged in. Logout to continue further.<br>You will be redirected to home in <span id="counter">5</span> seconds.</h5>
+    <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("{% url 'blog:post_list' %}");
+            }
+        }, 1000);
+    </script>
+    {% else %}
+    <h2>Sign Up</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value={{next}}>
+        <p style="text-align: center;"><button type="submit" class="btn btn-primary">Sign Up!</button></p>
+    </form>
+    {% endif %}
+{% endblock %}

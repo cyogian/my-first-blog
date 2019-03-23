@@ -8,7 +8,7 @@
                             {% else %}
                             <a class="btn btn-light" href="{% url 'blog:post_publish' pk=post.pk %}">Publish</a>
                             {% endif %}
-                            {% if user.is_authenticated %}
+                            {% if user == post.author %}
                             <a class="btn btn-light" href="{% url 'blog:post_edit' pk=post.pk %}"><span class="fas fa-pencil-alt"></a>
                             <a class="btn btn-light" href="{% url 'blog:post_remove' pk=post.pk %}"><span class="fas fa-times"></span></a>
                             {% endif %}
@@ -22,7 +22,7 @@
                 <hr>
                 <a class="btn btn-light" href="{% url 'blog:add_comment_to_post' pk=post.pk %}">Add comment</a>
                 {% for comment in post.comment_set.all %}
-                    {% if user.is_authenticated or comment.approved_comment %}
+                    {% if user == post.author or comment.approved_comment %}
                     <div class="comment">
                         <div class="date">
                             {{ comment.created_date }}

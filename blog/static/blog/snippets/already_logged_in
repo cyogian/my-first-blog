@@ -1,0 +1,11 @@
+<h6>Looks like an user is already logged in. Logout to continue further.<br>You will be redirected to home in <span id="counter">5</span> seconds.</h6>
+    <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("{% url 'blog:post_list' %}");
+            }
+        }, 1000);
+    </script>

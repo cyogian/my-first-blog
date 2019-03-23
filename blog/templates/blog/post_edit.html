@@ -2,9 +2,21 @@
 
 {% block content %}
     <h2>New post</h2>
-    <form method="post" class="post-form">
+    <form method="post" class="post-form" id="myForm">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-light">Save</button>
+
+        <input type="hidden" name="sap" value=0>
+        <button type="button" onclick="optSap(0)" class="save btn btn-light" >Save as Draft</button>
+        <button type="button" onclick="optSap(1)" class="save btn btn-primary" >Save & Publish</button>
     </form>
+    <script>
+        function optSap(flag) {
+            obj = document.getElementById("myForm");
+            if (flag == 1) {
+                 obj.sap.value = 1;
+            }
+            obj.submit();
+        }
+    </script>
 {% endblock %}
