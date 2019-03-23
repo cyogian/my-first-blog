@@ -22,19 +22,28 @@
                 <hr>
                 <a class="btn btn-light" href="{% url 'blog:add_comment_to_post' pk=post.pk %}">Add comment</a>
                 {% for comment in post.comment_set.all %}
-                    {% if user == post.author or comment.approved_comment %}
+                    {% if user == post.author or user == comment.author %}
                     <div class="comment">
                         <div class="date">
                             {{ comment.created_date }}
-                            {% if not comment.approved_comment %}
-                                <a class="btn btn-light" href="{% url 'blog:comment_remove' pk=comment.pk %}"><span class="fas fa-times"></span></a>
+                            <a class="btn btn-light" href="{% url 'blog:comment_remove' pk=comment.pk %}"><span class="fas fa-times"></span></a>
+                            {% if not comment.approved_comment and user == post.author %}
                                 <a class="btn btn-light" href="{% url 'blog:comment_approve' pk=comment.pk %}">OK</a>
                             {% endif %}
                         </div>
-                        <strong>{{ comment.author }}</strong>
+                        <strong>{{ comment.author_name }}</strong>
+                        <p>{{ comment.text|linebreaks }}</p>
+                    </div>
+                    {% elif comment.approved_comment %}
+                    <div class="comment">
+                        <div class="date">
+                            {{ comment.created_date }}
+                        </div>
+                        <strong>{{ comment.author_name }}</strong>
                         <p>{{ comment.text|linebreaks }}</p>
                     </div>
                     {% endif %}
+
                     <hr>
                 {% empty %}
                     <p>No comments here yet :(</p>
