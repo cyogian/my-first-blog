@@ -22,6 +22,7 @@ def post_detail(request, pk):
 @login_required
 def post_new(request):
     if request.method =="POST":
+        #pdb.set_trace()
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
