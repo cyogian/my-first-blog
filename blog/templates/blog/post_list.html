@@ -11,5 +11,7 @@
                     <a href="{% url 'blog:post_detail' pk=post.pk %}#comment_section">Comments: {{ post.approved_comments.count }}</a>
                   </h6>
                 </div>
+                {% empty %}
+                <p><h5>Oops! Looks like no post is published yet. </h5></p>
                 {% endfor %}
 {% endblock %}

@@ -18,9 +18,9 @@
       {% if user.is_authenticated %}
       <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="fas fa-plus"></span></a>
       <a href="{% url 'blog:post_draft_list' %}" class="top-menu"><span class="fas fa-edit"></span></a>
-      <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}"><span class="fas fa-lock logout-btn"></span></a>)</small></p>
+      <p class="top-menu">Hello {{ user.username }} <small><a href="{% url 'logout' %}?next={{next}}"><span class="fas fa-sign-out-alt logout-btn"></span></a></small></p>
       {% else %}
-      <a href="{% url 'login' %}?next={{next}}" class="top-menu"><span class="fas fa-unlock"></span></a>
+      <a href="{% url 'login' %}?next={{next}}" class="top-menu"><span class="fas fa-sign-in-alt"></span></a>
       {% endif %}
       <h1><a href="/">Cyogian's Blog</a></h1>
     </div>

@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<p><h4>404</h4></p>
+<p><h5>Oops! Looks like you are trying to visit a non-existing page.</h5><h6>You will be redirected to home in <span id="counter">5</span> seconds.</h6></p>
+    <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("{% url 'blog:post_list' %}");
+            }
+        }, 1000);
+    </script>
+{% endblock %}

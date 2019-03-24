@@ -1,11 +1,12 @@
-from django.shortcuts import render, get_object_or_404, redirect
-import pdb
+from django.shortcuts import render, get_object_or_404, redirect, render_to_response
+#import pdb
 from django.utils import timezone, http
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.template import RequestContext
 # Create your views here.
 
 def post_list(request):
@@ -123,3 +124,17 @@ def signup(request):
         next = request.GET['next']
         next = next if http.is_safe_url(next, request.get_host()) else '/'
     return render(request, 'registration/signup.html', {'form':form, 'next':next})
+
+
+def handler404(request, exception, template_name="blog/404.html"):
+    response = render_to_response("blog/404.html")
+    response.status_code = 404
+    return response
+
+
+def handler500(request, *args, **argv):
+    response = render_to_response('blog/500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
+
