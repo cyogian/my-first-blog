@@ -2,15 +2,17 @@ This project follows the [Django Girls Tutorial](https://tutorial.djangogirls.or
 You can see the demo at [Cyogian's Blog](https://cyogian.pythonanywhere.com/)
 
 Features:
-1. Create Posts:
 
-  -> Save as Draft
+1. Create Posts:
+  Save as Draft
   
-  -> Save & Publish.
+  Save & Publish.
   
 2. Published Post List:
-
-  Visiblity: Public
+  
+  Visiblity:
+    
+    Public
  
 3. Draft List:
 
@@ -42,17 +44,17 @@ Features:
     
     Can be removed by the author of the Post if not approved.
  
- 6. Register New User:
+6. Register New User:
+  
+    Only registered user can create a post or add a comment.
+  
+  Note: 
  
-  -> Only registered user can create a post or add a comment.
-  
- Note: 
- 
-  -> Nothing special has been done at the frontend. Because it is simple project for beginners at Backend Development.
-  
-  -> Planning to add a WysiWyg Editor for post creation.
-  
-  -> Planning to add author profile.
-  
-  -> Planning to add image insertion feature to the posts.
-  
+     Nothing special has been done at the frontend. Because it is simple project for beginners at Backend Development.
+
+     Planning to add a WysiWyg Editor for post creation.
+
+     Planning to add author profile.
+
+     Planning to add image insertion feature to the posts.
+
