@@ -1,59 +1,63 @@
 This project follows the [Django Girls Tutorial](https://tutorial.djangogirls.org/en/).
 You can see the demo at [Cyogian's Blog](https://cyogian.pythonanywhere.com/)
 
-Features:
+#Features:
 
-1. Create Posts:
-
--> Save as Draft
+##1. Create Posts:
   
--> Save & Publish.
+  *Save as Draft
   
-2. Published Post List:
+  *Save & Publish.
   
--> Visiblity:  Public
+##1. Published Post List:
+  
+  *Visiblity:  
+  
+    Public
  
-3. Draft List:
-
--> Visiblity:  Author Only
-
-4. Post Detail:
-
--> Visibility: 
+##1. Draft List:
   
-    Public if published.
-    
-    Author Only if Draft.
-    
--> Editable
+  *Visiblity:  
   
--> Removable
+    Author Only
 
-5. Single Level Comment Section on Posts:
+##1. Post Detail:
+  
+  *Visibility: 
+  
+    *Public if published.
+    
+    *Author Only if Draft.
+    
+  *Editable
+  
+  *Removable
 
--> Visiblity: 
+##1. Single Level Comment Section on Posts:
+
+  *Visiblity: 
   
-    Public if approved by the author of the Post.
+    *Public if approved by the author of the Post.
     
-    Visible to author of the post as well as author of the comment even if not approved.
+    *Visible to author of the post as well as author of the comment even if not approved.
     
--> Deletion:
+  *Deletion:
   
-    Can be removed by the commentor.
+    *Can be removed by the commentor.
     
-    Can be removed by the author of the Post if not approved.
+    *Can be removed by the author of the Post if not approved.
  
-6. Register New User:
+##1. Register New User:
 
--> Only registered user can create a post or add a comment.
+  *Only registered user can create a post or add a comment.
   
-**Note: 
+#Note: 
  
-     Nothing special has been done at the frontend. Because it is simple project for beginners at Backend Development.
+    *Nothing special has been done at the frontend. Because it is simple project for beginners at Backend Development.
 
-     Planning to add a WysiWyg Editor for post creation.
+    *Planning to add a WysiWyg Editor for post creation.
 
-     Planning to add author profile.
+    *Planning to add author profile.
 
-     Planning to add image insertion feature to the posts.
+    *Planning to add image insertion feature to the posts.
 
