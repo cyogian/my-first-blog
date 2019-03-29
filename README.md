@@ -21,8 +21,8 @@ You can see the demo at [Cyogian's Blog](https://cyogian.pythonanywhere.com/)
   
 * Visibility:
 
-1. Public if published.
-1. Author Only if Draft.
+  1. Public if published.
+  1. Author Only if Draft.
     
 * Editable
   
@@ -32,15 +32,15 @@ You can see the demo at [Cyogian's Blog](https://cyogian.pythonanywhere.com/)
 
 * Visiblity: 
 
-1. Public if approved by the author of the Post.
+  1. Public if approved by the author of the Post.
     
-1. Visible to author of the post as well as author of the comment even if not approved.
+  1. Visible to author of the post as well as author of the comment even if not approved.
     
 * Deletion:
   
-1. Can be removed by the commentor.
+  1. Can be removed by the commentor.
     
-1. Can be removed by the author of the Post if not approved.
+  1. Can be removed by the author of the Post if not approved.
  
 ## 6. Register New User:
 
